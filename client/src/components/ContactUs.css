@@ -1,0 +1,42 @@
+
+.photos
+{
+  width: 150px;
+  height: 150px;
+  margin: auto;
+}
+
+.contacts
+{
+  overflow-x: hidden;
+}
+
+.name
+{
+  text-transform: uppercase;
+  color: #6096BA;
+}
+
+.email, .phone
+{
+  text-decoration: none;
+  color: #274C77;
+}
+
+.card:hover
+{
+    transform: scale(1.1);
+    box-shadow: 1px 1px 15px gray;
+}
+
+.card
+{
+  border: 1px #6096BA solid;
+  border-radius: 15px;
+  
+}
+
+.icon
+{
+  color: #274C77;
+}

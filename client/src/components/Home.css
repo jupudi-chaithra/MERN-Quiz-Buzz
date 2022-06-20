@@ -1,0 +1,44 @@
+h1
+{
+    text-align: center;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 60px;
+    margin-top: 50px;
+    color: #6096BA;
+}
+
+p
+{
+    font-family: 'Fredoka', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    width: 280px;
+    margin: auto;
+    padding-top: 30px;
+    color: #274C77;
+}
+
+.chatImage
+{
+    height: 190px;
+    padding-right: 30px;
+    position: fixed;
+    bottom: 15px;
+    right: 8px;
+}
+
+@media screen and (max-width: 576px)
+{
+    .chatImage
+    {
+        height: 90px;
+    }
+}
+
+@media screen and (max-width: 300px)
+{
+    .chatImage
+    {
+        display: none;
+    }
+}

@@ -1,0 +1,34 @@
+.login-button
+{
+    width: 10vw;
+    display: block;
+    margin: auto;
+    margin-top: 1vh;
+}
+.login-page
+{
+    margin-top: 20vh;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+@media screen and (max-width: 576px)
+{
+    .login-button
+    {
+        width: 50px;
+    }
+}
+
+h4
+{
+    color: #274C77;
+}
+.loginImage
+{
+    height: 10vh;
+}
+
+form
+{
+    width: 40vw;
+}

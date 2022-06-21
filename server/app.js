@@ -42,9 +42,3 @@ app.listen(PORT, () => {
     console.log(`server is running at port ${PORT}`);
 })
 
-
-//strength
-//fluency
-//clarity
-//rebuttal
-//able to point out loop holes in opponent's arguments

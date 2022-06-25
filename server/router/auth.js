@@ -88,6 +88,12 @@ router.get('/topics', authenticate, (req, res) => {
     res.send(req.rootUser)
 });
 
+//home
+router.get('/home', authenticate, (req, res) => {
+    console.log('Hello Home');
+    res.send(req.rootUser)
+});
+
 //logout
 router.get('/logout', (req, res) => {
     console.log('Hello Logout');

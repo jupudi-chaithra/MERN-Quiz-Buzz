@@ -43,7 +43,7 @@ function SignUp() {
       console.log("Registration failed")
     }
     else if(res.status === 423){
-      window.alert("Enter the confirm password field correctly")
+      window.alert("Confirm password is not same as password")
       console.log("Registration failed")
     }
     else if(!data){
@@ -63,13 +63,13 @@ function SignUp() {
     <div className='signin-page'>
     <h4 className='text-center display-6 pb-4'>Sign Up</h4>
       <form method="POST" name='SignUpForm' className="mx-auto p-4 SignUpForm">
-        <div className="mb-3">
+        {/* <div className="mb-3">
           <label htmlFor="name">Username</label>
           <input type="text" id='name' name="name" className="form-control" 
             value = {user.name}
             onChange = {handleInputs}
           />
-        </div>
+        </div> */}
         <div className="mb-3">
           <label htmlFor="email">Email</label>
           <input type="email" id="email" name="email" className="form-control"

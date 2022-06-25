@@ -57,9 +57,10 @@ function Login() {
       window.alert("Invalid credentials")
     }
     else{
-      dispatch({type:'USER', payload: true})
+      dispatch({type:"USER", payload: true})
       // window.alert("Login successful")
       navigate("/home")
+      // navigate("/topics")
     }
   }
 

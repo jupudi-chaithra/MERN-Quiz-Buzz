@@ -53,9 +53,10 @@ function SignUp() {
     else{
       window.alert("Registration successful")
       console.log("Registration successful")
+      navigate('/')
     }
 
-    navigate('/')
+    
 
   }
 
@@ -63,13 +64,13 @@ function SignUp() {
     <div className='signin-page'>
     <h4 className='text-center display-6 pb-4'>Sign Up</h4>
       <form method="POST" name='SignUpForm' className="mx-auto p-4 SignUpForm">
-        {/* <div className="mb-3">
+        <div className="mb-3">
           <label htmlFor="name">Username</label>
           <input type="text" id='name' name="name" className="form-control" 
             value = {user.name}
             onChange = {handleInputs}
           />
-        </div> */}
+        </div>
         <div className="mb-3">
           <label htmlFor="email">Email</label>
           <input type="email" id="email" name="email" className="form-control"

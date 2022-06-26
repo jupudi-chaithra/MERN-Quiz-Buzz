@@ -1,9 +1,17 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 import './Home.css'
-import homeImage from '../images/Home-image1.svg'
 import {useNavigate} from 'react-router-dom'
+import {UserContext} from '../App'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import homeImage from '../images/Home-image1.svg'
+
+
+
 
 function Home() {
+  const {state, dispatch} = useContext(UserContext)
+  const [userData, setUserData] = useState({})
 
   let navigate = useNavigate()
 
@@ -20,7 +28,9 @@ function Home() {
       })
 
       const data = await res.json();
-      console.log(data);
+      // console.log(data);
+      setUserData(data)
+
 
       if(!res.status === 200){
         const error = new Error(res.error)
@@ -36,11 +46,13 @@ function Home() {
 
   useEffect(() => {
     callHomePage();
+    dispatch({type:"USER", payload: true})
   }, [])
 
 
   return (
     <div>
+        <div>
         <h1>Welcome to Quiz Buzz</h1>
         <p>
           Test your knowledge on various topics by playing fun quizzes for free.
@@ -49,6 +61,7 @@ function Home() {
           Happy Quizzing!
         </p>
         <img src={homeImage} alt="Home" className='chatImage'/>
+      </div>
     </div>
   )
 }

@@ -38,6 +38,10 @@ function SignUp() {
       window.alert("Email ID is already registered")
       console.log("Registration failed")
     }
+    else if(res.status === 421){
+      window.alert("Username is already registered")
+      console.log("Registration failed")
+    }
     else if(res.status === 424){
       window.alert("Enter all the fields")
       console.log("Registration failed")

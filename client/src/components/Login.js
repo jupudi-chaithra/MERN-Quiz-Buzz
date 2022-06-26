@@ -58,9 +58,7 @@ function Login() {
     }
     else{
       dispatch({type:"USER", payload: true})
-      // window.alert("Login successful")
       navigate("/home")
-      // navigate("/topics")
     }
   }
 

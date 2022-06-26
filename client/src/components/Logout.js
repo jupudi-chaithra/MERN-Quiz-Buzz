@@ -18,11 +18,12 @@ function Logout() {
             },
             credentials: "include"
         }).then((res) => {
-            
+
             navigate('/')
             dispatch({type:"USER", payload: false})
+            // console.log(state)
 
-            if(!res.status != 200){
+            if(res.status != 200){
                 const error = new Error(res.error)
                 throw error;
             }

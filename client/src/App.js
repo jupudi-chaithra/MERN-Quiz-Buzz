@@ -16,13 +16,15 @@ import logo from './images/Logo.svg'
 import { createContext, useReducer } from 'react';
 import { initialState, reducer } from './reducer/UseReducer';
 import TopNav from './components/TopNav'
+import Intro from './components/Intro';
 
 export const UserContext = createContext();
 
 const Routing = () => {
     return(
         <Routes>
-          <Route exact path="/" element = {<Login/>}></Route>
+          <Route path="/" element = {<Intro/>}></Route>
+          <Route path="/login" element = {<Login/>}></Route>
           <Route path="home" element = {<Home/>}></Route>
           <Route path="topics" element = {<Topics/>}>
             <Route path='html' element = {<HTML />}></Route>  
@@ -38,6 +40,7 @@ const Routing = () => {
   }
 
 function App() {
+  // const initialState = false
   const [state, dispatch] = useReducer(reducer, initialState)
  
   return (    

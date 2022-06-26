@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Person from '../images/Person.png'
 import Person2 from '../images/Person2.png'
 import Person3 from '../images/Person3.png'
 import Person4 from '../images/Person4.png'
 import './ContactUs.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import { faEnvelope, faMailBulk, faPhone, faTasks } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
+import {UserContext} from '../App'
+
 
 
 function ContactUs() {
+  const {state, dispatch} = useContext(UserContext)
+
+  dispatch({type:"USER", payload: true})
+
   return (
     <div className='text-center contacts'>
         {/* First row of cards */}

@@ -19,11 +19,15 @@ router.post('/register', async(req, res) => {
     }
 
     try{
-        const userExists = await User.findOne({email:email});
+        const userExists = await User.findOne({email:email})
+        const unExists = await User.findOne({name:name});
 
         if(userExists){
             return res.status(422).json({error: "This email ID is already registered"});
-        }else if(password != cpassword){
+        }else if(unExists){
+            return res.status(421).json({error: "This Username is already registered"});
+        }
+        else if(password != cpassword){
             return res.status(423).json({error: "Enter the confirm password field correctly"});
         }else{
             const user = new User({name, email, password, cpassword})
@@ -49,7 +53,7 @@ router.post('/signin', async(req, res) => {
     try{
         let token;
         const {email, password} = req.body;
-
+        
         if(!email || !password){
             res.status(400).json({error: "Both fields are required"})
         }
@@ -84,19 +88,19 @@ router.post('/signin', async(req, res) => {
 
 //topics
 router.get('/topics', authenticate, (req, res) => {
-    console.log('Hello Topics');
+    // console.log('Hello Topics');
     res.send(req.rootUser)
 });
 
 //home
 router.get('/home', authenticate, (req, res) => {
-    console.log('Hello Home');
+    // console.log('Hello Home');
     res.send(req.rootUser)
 });
 
 //logout
 router.get('/logout', (req, res) => {
-    console.log('Hello Logout');
+    // console.log('Hello Logout');
     res.clearCookie('jwtoken', {path:'/'})
     res.status(200).send('User logout')
 });

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import {Link, Outlet, useNavigate} from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import './topics.css'
@@ -6,8 +6,12 @@ import TopicsImage from '../images/Topics-image.svg'
 import TopicsImage2 from '../images/Topics-image2.svg'
 import { faBootstrap, faCss3, faHtml5, faJs } from '@fortawesome/free-brands-svg-icons'
 import {useState} from 'react'
+import {UserContext} from '../App'
+
 
 function Topics() {
+  const {state, dispatch} = useContext(UserContext)
+
   let navigate = useNavigate()
 
   const callTopicsPage = async () => {
@@ -39,6 +43,7 @@ function Topics() {
 
   useEffect(() => {
     callTopicsPage();
+    dispatch({type:"USER", payload: true})
   }, [])
   
 

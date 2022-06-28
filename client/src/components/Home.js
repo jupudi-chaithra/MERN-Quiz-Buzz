@@ -63,7 +63,7 @@ function Home() {
             <td><h5 className='centre'>{userData.htmlScore}</h5></td>
           </tr>
           <tr>
-            <td><h5 ><FontAwesomeIcon icon={faCss3}/> CSS</h5></td>
+            <td><h5><FontAwesomeIcon icon={faCss3}/> CSS</h5></td>
             <td><h5 className='centre'>{userData.css}</h5></td>
             <td><h5 className='centre'>{userData.cssScore}</h5></td>
           </tr>

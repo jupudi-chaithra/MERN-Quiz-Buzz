@@ -120,8 +120,38 @@ function JS() {
 			setCurrentQuestion(nextQuestion);
 		} else {
 			setShowScore(true);
+      Postdata()
 		}
 	};
+
+  const getData = async () => {
+    const res = await fetch('/home', {
+    headers: {
+      Accept : "application/json",
+      "Content-Type" : "application/json"
+    },
+    credentials:"include"
+
+  })
+  const data = await res.json();
+  return data 
+}
+  
+const Postdata = async () => {
+  const data = await getData()
+  const email = data.email
+
+
+  const res = await fetch("/incrementj", {
+    method: "POST",
+    headers: {
+      "Content-Type" : "application/json"
+    },
+    body: JSON.stringify({
+      email , score
+    })
+  })
+}
 
 
   return (

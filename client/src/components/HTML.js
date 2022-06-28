@@ -1,6 +1,7 @@
 import {React, useState} from 'react'
 import './game.css'
 
+
 function HTML() {
   const questions = [
     {
@@ -99,7 +100,7 @@ function HTML() {
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
 
-	const handleAnswerOptionClick = (isCorrect) => {
+  const handleAnswerOptionClick = (isCorrect) => {
 		if (isCorrect) {
 			setScore(score + 1);
 		}
@@ -109,10 +110,39 @@ function HTML() {
 			setCurrentQuestion(nextQuestion);
 		} else {
 			setShowScore(true);
+      Postdata()
 		}
 	};
+  
+  const getData = async () => {
+    const res = await fetch('/home', {
+    headers: {
+      Accept : "application/json",
+      "Content-Type" : "application/json"
+    },
+    credentials:"include"
+
+  })
+  const data = await res.json();
+  return data 
+}
+  
+const Postdata = async () => {
+  const data = await getData()
+  const email = data.email
 
 
+  const res = await fetch("/incrementh", {
+    method: "POST",
+    headers: {
+      "Content-Type" : "application/json"
+    },
+    body: JSON.stringify({
+      email , score
+    })
+  })
+}
+  
   return (
     <div className='x'>
 			{showScore ? (
@@ -132,7 +162,7 @@ function HTML() {
           
 					<div className='answer-section'>
 						{questions[currentQuestion].answerOptions.map((answerOption) => (
-							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+							<button key={answerOption.answerText} onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
 						))}
 					</div>
 				</>

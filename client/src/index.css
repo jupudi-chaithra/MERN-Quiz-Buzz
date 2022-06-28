@@ -17,6 +17,9 @@ body {
 .nav
 {
   background-color: #274C77;
+  position: fixed;
+  top: 0;
+  width: 100%
 }
 
 .title

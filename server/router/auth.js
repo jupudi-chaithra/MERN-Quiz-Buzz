@@ -47,6 +47,54 @@ router.post('/register', async(req, res) => {
     
 })
 
+//IncrementH
+router.post('/incrementh', async(req, res) => {
+    const {email, score} = req.body;
+    const user = await User.findOne({email:email})
+    console.log("Auth is getting invoked");
+    const avg = ((user.htmlScore * user.html) + score) / (user.html + 1)
+    const x = await User.updateOne({email:email}, { $inc: {html: 1}})
+    const y = await User.updateOne({email:email}, { $set: {htmlScore: avg}})
+    console.log(x);
+    console.log(y);
+})
+
+//IncrementC
+router.post('/incrementc', async(req, res) => {
+    const {email, score} = req.body;
+    const user = await User.findOne({email:email})
+    console.log("Auth is getting invoked");
+    const avg = ((user.cssScore * user.html) + score) / (user.css + 1)
+    const x = await User.updateOne({email:email}, { $inc: {css: 1}})
+    const y = await User.updateOne({email:email}, { $set: {cssScore: avg}})
+    console.log(x);
+    console.log(y);
+})
+
+//IncrementJ
+router.post('/incrementj', async(req, res) => {
+    const {email, score} = req.body;
+    const user = await User.findOne({email:email})
+    console.log("Auth is getting invoked");
+    const avg = ((user.jsScore * user.js) + score) / (user.js + 1)
+    const x = await User.updateOne({email:email}, { $inc: {js: 1}})
+    const y = await User.updateOne({email:email}, { $set: {jsScore: avg}})
+    console.log(x);
+    console.log(y);
+})
+
+//IncrementB
+router.post('/incrementb', async(req, res) => {
+    const {email, score} = req.body;
+    const user = await User.findOne({email:email})
+    console.log("Auth is getting invoked");
+    const avg = ((user.bsScore * user.bs) + score) / (user.bs + 1)
+    const x = await User.updateOne({email:email}, { $inc: {bs: 1}})
+    const y = await User.updateOne({email:email}, { $set: {bsScore: avg}})
+    console.log(x);
+    console.log(y);
+})
+
 //Login route
 
 router.post('/signin', async(req, res) => {

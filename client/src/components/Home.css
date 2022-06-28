@@ -3,7 +3,7 @@ h1
     text-align: center;
     font-family: 'Fredoka', sans-serif;
     font-size: 60px;
-    margin-top: 50px;
+    margin-top: 150px;
     color: #6096BA;
 }
 
@@ -30,10 +30,9 @@ p
 h2
 {
     font-family: 'Fredoka', sans-serif;
-    font-size: 30px;
+    font-size: 32px;
     color: #274C77;
-    margin-top: 40px;
-    margin-left: 40px;
+    margin: 5px;
 }
 
 h3
@@ -52,40 +51,38 @@ h5
     padding: 5px;
 }
 
-
-.details-card
+.centre
 {
-    margin-left: 40px;
-    margin-right: 40px;
-    border: #274C77 2px solid;
-    box-shadow: 3px 3px 10px #274C77;
-    background-color: white;
+    text-align: center;
 }
 
-.quiz-details
+table
 {
-    margin-left: 40px;
-    margin-right: 40px;
-    border: #274C77 2px solid;
-    box-shadow: 3px 3px 10px #274C77;
-    background-color: white;
+    /* text-align: center; */
+    margin-top: 8vh;
+    margin-left: auto;
+    margin-right: auto;
+    border: #274c77 2px solid;
+    box-shadow: 1px 1px 5px #274C77;
 }
 
-.average-details
+th
 {
-    margin-left: 40px;
-    margin-right: 40px;
-    margin-bottom: 40px;
-    border: #274C77 2px solid;
-    box-shadow: 3px 3px 10px #274C77;
-    background-color: white;
+    padding: 3px;
+    border: #274c77 2px solid;
 }
+
+td
+{
+    border-right: #274C77 2px solid;
+}
+
 
 @media screen and (max-width: 576px)
 {
     .chatImage
     {
-        height: 90px;
+        height: 75px;
     }
 }
 

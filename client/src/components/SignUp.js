@@ -69,7 +69,7 @@ function SignUp() {
     <h4 className='text-center display-6 pb-4'>Sign Up</h4>
       <form method="POST" name='SignUpForm' className="mx-auto p-4 SignUpForm">
         <div className="mb-3">
-          <label htmlFor="name">Username</label>
+          <label htmlFor="name">Name</label>
           <input type="text" id='name' name="name" className="form-control" 
             value = {user.name}
             onChange = {handleInputs}

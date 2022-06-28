@@ -19,6 +19,38 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    html:{
+        type: Number,
+        default: 0
+    },
+    htmlScore:{
+        type: Number,
+        default: 0
+    },
+    css:{
+        type: Number,
+        default: 0
+    },
+    cssScore:{
+        type: Number,
+        default: 0
+    },
+    js:{
+        type: Number,
+        default: 0
+    },
+    jsScore:{
+        type: Number,
+        default: 0
+    },
+    bs:{
+        type: Number,
+        default: 0
+    },
+    bsScore:{
+        type: Number,
+        default: 0
+    },
     tokens: [
         {
             token:{
